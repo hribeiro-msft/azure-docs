@@ -107,6 +107,9 @@ Conditions that evaluate whether the values of properties in the resource reques
   - Returns the type of [managed identity](/entra/identity/managed-identities-azure-resources/overview) enabled on the resource.
   - Valid values from managed identity: `None`, `SystemAssigned`, `SystemAssigned, UserAssigned`, and `UserAssigned`.
   - `identity.type` can be used with any supported [conditions](#conditions) of a policy rule. For example, a policy with [deny effect](./effect-deny.md) could block requests based on the existence of an identity or based on the specific value of the identity type. An example policy rule that checks for existence of `identity.type` is the built-in Policy definition [Automation Account should have Managed Identity](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fdea83a72-443c-4292-83d5-54a2f98749c0) with ID `dea83a72-443c-4292-83d5-54a2f98749c0`.
+- `identity.userAssignedIdentities`
+  - Returns the resource id of the [managed identity](/entra/identity/managed-identities-azure-resources/overview).
+  - The resource id will be held in the key value of the identity.userAssignedIdentities property.
 - `tags`
   - `tags['<tagName>']`
     - This bracket syntax supports tag names that have punctuation such as a hyphen, period, or space.
